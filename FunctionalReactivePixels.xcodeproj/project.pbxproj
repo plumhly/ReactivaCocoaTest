@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0943FB601F17D83900E389A9 /* FRPPhotoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0943FB5F1F17D83900E389A9 /* FRPPhotoModel.m */; };
+		0943FB631F17D8D400E389A9 /* FRPPhotoImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0943FB621F17D8D400E389A9 /* FRPPhotoImporter.m */; };
 		5D01AA38ED6FAC5E4F73344A /* libPods-FunctionalReactivePixels.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C00F9E9294D57EB2F891767 /* libPods-FunctionalReactivePixels.a */; };
 		EF2657001F1783CB000273C9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EF2656FF1F1783CB000273C9 /* main.m */; };
 		EF2657031F1783CB000273C9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF2657021F1783CB000273C9 /* AppDelegate.m */; };
@@ -19,6 +21,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0943FB5C1F17D53600E389A9 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		0943FB5E1F17D83900E389A9 /* FRPPhotoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRPPhotoModel.h; sourceTree = "<group>"; };
+		0943FB5F1F17D83900E389A9 /* FRPPhotoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRPPhotoModel.m; sourceTree = "<group>"; };
+		0943FB611F17D8D400E389A9 /* FRPPhotoImporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRPPhotoImporter.h; sourceTree = "<group>"; };
+		0943FB621F17D8D400E389A9 /* FRPPhotoImporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRPPhotoImporter.m; sourceTree = "<group>"; };
 		5C00F9E9294D57EB2F891767 /* libPods-FunctionalReactivePixels.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FunctionalReactivePixels.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FAEA378C95B68055C55E1AE /* Pods-FunctionalReactivePixels.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunctionalReactivePixels.release.xcconfig"; path = "Pods/Target Support Files/Pods-FunctionalReactivePixels/Pods-FunctionalReactivePixels.release.xcconfig"; sourceTree = "<group>"; };
 		CAC19BFA0B58BA5D4E352D7C /* Pods-FunctionalReactivePixels.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunctionalReactivePixels.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FunctionalReactivePixels/Pods-FunctionalReactivePixels.debug.xcconfig"; sourceTree = "<group>"; };
@@ -50,6 +57,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0943FB5D1F17D82300E389A9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0943FB5E1F17D83900E389A9 /* FRPPhotoModel.h */,
+				0943FB5F1F17D83900E389A9 /* FRPPhotoModel.m */,
+				0943FB611F17D8D400E389A9 /* FRPPhotoImporter.h */,
+				0943FB621F17D8D400E389A9 /* FRPPhotoImporter.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		C61B16283BED038D018D8A77 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +106,7 @@
 		EF2656FD1F1783CB000273C9 /* FunctionalReactivePixels */ = {
 			isa = PBXGroup;
 			children = (
+				0943FB5D1F17D82300E389A9 /* Model */,
 				EF2657181F1787C1000273C9 /* VC */,
 				EF2657011F1783CB000273C9 /* AppDelegate.h */,
 				EF2657021F1783CB000273C9 /* AppDelegate.m */,
@@ -98,6 +117,7 @@
 				EF26570C1F1783CC000273C9 /* LaunchScreen.storyboard */,
 				EF26570F1F1783CC000273C9 /* Info.plist */,
 				EF2656FE1F1783CB000273C9 /* Supporting Files */,
+				0943FB5C1F17D53600E389A9 /* PrefixHeader.pch */,
 			);
 			path = FunctionalReactivePixels;
 			sourceTree = "<group>";
@@ -245,7 +265,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0943FB631F17D8D400E389A9 /* FRPPhotoImporter.m in Sources */,
 				EF2657171F1786EC000273C9 /* FRPGalleryViewController.m in Sources */,
+				0943FB601F17D83900E389A9 /* FRPPhotoModel.m in Sources */,
 				EF26571B1F178C25000273C9 /* FRPGalleryFlowLayout.m in Sources */,
 				EF2657061F1783CB000273C9 /* ViewController.m in Sources */,
 				EF2657031F1783CB000273C9 /* AppDelegate.m in Sources */,
@@ -373,6 +395,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 22Z9PC4Q2J;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = FunctionalReactivePixels/PrefixHeader.pch;
 				INFOPLIST_FILE = FunctionalReactivePixels/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sigma.FunctionalReactivePixels;
@@ -386,6 +410,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 22Z9PC4Q2J;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = FunctionalReactivePixels/PrefixHeader.pch;
 				INFOPLIST_FILE = FunctionalReactivePixels/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sigma.FunctionalReactivePixels;

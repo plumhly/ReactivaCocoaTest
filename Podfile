@@ -6,7 +6,11 @@ target 'FunctionalReactivePixels' do
   # use_frameworks
 
 pod 'ReactiveCocoa'
+pod 'libextobjc'
+pod 'SVProgressHUD'
+pod '500px-iOS-api'
 
+#source 'https://github.com/500px/500px-iOS-api.git'
   # Pods for FunctionalReactivePixels
 
 end
