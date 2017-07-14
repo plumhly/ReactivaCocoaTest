@@ -7,10 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import "FRPGalleryViewController.h"
 
 @interface AppDelegate ()
 
-@property (readonly, nonatomic) PXAPIHelper *apiHelper;
+@property (nonatomic, strong) PXAPIHelper *apiHelper;
 
 @end
 
@@ -19,7 +20,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    self.apiHelper = [[PXAPIHelper alloc]initWithHost:nil consumerKey:@"" consumerSecret:@""];
+    self.apiHelper = [[PXAPIHelper alloc]initWithHost:nil consumerKey:@"DC2To2BS0ic1ChKDK15d44M42YHf9gbUJgdFoF0m" consumerSecret:@"i8WL4chWoZ4kw9fh3jzHK7XzTer1y5tUNvsTFNnB"];
+    
+    self.window.rootViewController = [[UINavigationController alloc]initWithRootViewController:[FRPGalleryViewController new]];
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

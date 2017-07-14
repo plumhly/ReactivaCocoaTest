@@ -12,12 +12,13 @@
 		5D01AA38ED6FAC5E4F73344A /* libPods-FunctionalReactivePixels.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C00F9E9294D57EB2F891767 /* libPods-FunctionalReactivePixels.a */; };
 		EF2657001F1783CB000273C9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EF2656FF1F1783CB000273C9 /* main.m */; };
 		EF2657031F1783CB000273C9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF2657021F1783CB000273C9 /* AppDelegate.m */; };
-		EF2657061F1783CB000273C9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF2657051F1783CB000273C9 /* ViewController.m */; };
 		EF2657091F1783CB000273C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF2657071F1783CB000273C9 /* Main.storyboard */; };
 		EF26570B1F1783CC000273C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF26570A1F1783CC000273C9 /* Assets.xcassets */; };
 		EF26570E1F1783CC000273C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF26570C1F1783CC000273C9 /* LaunchScreen.storyboard */; };
 		EF2657171F1786EC000273C9 /* FRPGalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF2657161F1786EC000273C9 /* FRPGalleryViewController.m */; };
 		EF26571B1F178C25000273C9 /* FRPGalleryFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = EF26571A1F178C25000273C9 /* FRPGalleryFlowLayout.m */; };
+		EF42108A1F18819A00E6F591 /* FRPCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF4210891F18819A00E6F591 /* FRPCollectionViewCell.m */; };
+		EF42108D1F18A9F900E6F591 /* FRPFullSizePhotoViewControler.m in Sources */ = {isa = PBXBuildFile; fileRef = EF42108C1F18A9F900E6F591 /* FRPFullSizePhotoViewControler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,8 +34,6 @@
 		EF2656FF1F1783CB000273C9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EF2657011F1783CB000273C9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EF2657021F1783CB000273C9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		EF2657041F1783CB000273C9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		EF2657051F1783CB000273C9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		EF2657081F1783CB000273C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EF26570A1F1783CC000273C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF26570D1F1783CC000273C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -43,6 +42,10 @@
 		EF2657161F1786EC000273C9 /* FRPGalleryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRPGalleryViewController.m; sourceTree = "<group>"; };
 		EF2657191F178C25000273C9 /* FRPGalleryFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRPGalleryFlowLayout.h; sourceTree = "<group>"; };
 		EF26571A1F178C25000273C9 /* FRPGalleryFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRPGalleryFlowLayout.m; sourceTree = "<group>"; };
+		EF4210881F18819A00E6F591 /* FRPCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRPCollectionViewCell.h; sourceTree = "<group>"; };
+		EF4210891F18819A00E6F591 /* FRPCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRPCollectionViewCell.m; sourceTree = "<group>"; };
+		EF42108B1F18A9F900E6F591 /* FRPFullSizePhotoViewControler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRPFullSizePhotoViewControler.h; sourceTree = "<group>"; };
+		EF42108C1F18A9F900E6F591 /* FRPFullSizePhotoViewControler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRPFullSizePhotoViewControler.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,8 +113,6 @@
 				EF2657181F1787C1000273C9 /* VC */,
 				EF2657011F1783CB000273C9 /* AppDelegate.h */,
 				EF2657021F1783CB000273C9 /* AppDelegate.m */,
-				EF2657041F1783CB000273C9 /* ViewController.h */,
-				EF2657051F1783CB000273C9 /* ViewController.m */,
 				EF2657071F1783CB000273C9 /* Main.storyboard */,
 				EF26570A1F1783CC000273C9 /* Assets.xcassets */,
 				EF26570C1F1783CC000273C9 /* LaunchScreen.storyboard */,
@@ -133,10 +134,14 @@
 		EF2657181F1787C1000273C9 /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				EF42108B1F18A9F900E6F591 /* FRPFullSizePhotoViewControler.h */,
+				EF42108C1F18A9F900E6F591 /* FRPFullSizePhotoViewControler.m */,
 				EF2657151F1786EC000273C9 /* FRPGalleryViewController.h */,
 				EF2657161F1786EC000273C9 /* FRPGalleryViewController.m */,
 				EF2657191F178C25000273C9 /* FRPGalleryFlowLayout.h */,
 				EF26571A1F178C25000273C9 /* FRPGalleryFlowLayout.m */,
+				EF4210881F18819A00E6F591 /* FRPCollectionViewCell.h */,
+				EF4210891F18819A00E6F591 /* FRPCollectionViewCell.m */,
 			);
 			name = VC;
 			sourceTree = "<group>";
@@ -266,10 +271,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0943FB631F17D8D400E389A9 /* FRPPhotoImporter.m in Sources */,
+				EF42108A1F18819A00E6F591 /* FRPCollectionViewCell.m in Sources */,
 				EF2657171F1786EC000273C9 /* FRPGalleryViewController.m in Sources */,
 				0943FB601F17D83900E389A9 /* FRPPhotoModel.m in Sources */,
 				EF26571B1F178C25000273C9 /* FRPGalleryFlowLayout.m in Sources */,
-				EF2657061F1783CB000273C9 /* ViewController.m in Sources */,
+				EF42108D1F18A9F900E6F591 /* FRPFullSizePhotoViewControler.m in Sources */,
 				EF2657031F1783CB000273C9 /* AppDelegate.m in Sources */,
 				EF2657001F1783CB000273C9 /* main.m in Sources */,
 			);

@@ -15,6 +15,7 @@
 @property (strong, nonatomic) NSString *photographerName;
 @property (strong, nonatomic) NSNumber *rating;
 @property (strong, nonatomic) NSString *thumbnilUrl;
+@property (nonatomic, strong) NSData *thumbnilData;
 @property (strong, nonatomic) NSString *fullsizedURL;
 @property (strong, nonatomic) NSData *fullsizedData;
 

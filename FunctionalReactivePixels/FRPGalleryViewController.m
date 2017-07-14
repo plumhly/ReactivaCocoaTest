@@ -8,8 +8,13 @@
 
 #import "FRPGalleryViewController.h"
 #import "FRPGalleryFlowLayout.h"
+#import "FRPCollectionViewCell.h"
+#import "FRPPhotoImporter.h"
+#import "FRPFullSizePhotoViewControler.h"
 
-@interface FRPGalleryViewController ()
+@interface FRPGalleryViewController ()<FRPFullSizePhotoViewControllerDelegate>
+
+@property (nonatomic, strong) NSArray *photos;
 
 @end
 
@@ -30,14 +35,25 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"Popular on 500px";
     
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = NO;
+    [self.collectionView registerClass:[FRPCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
-    // Register cell classes
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
-    
+    @weakify(self)
+    [RACObserve(self, photos) subscribeNext:^(id x) {
+        @strongify(self);
+        [self.collectionView reloadData];
+    }];
+    [self loadPhoto];
     // Do any additional setup after loading the view.
+}
+
+- (void)loadPhoto {
+    [[FRPPhotoImporter importPhotos] subscribeNext:^(id x) {
+        self.photos = x;
+    } error:^(NSError *error) {
+        NSLog(@"load photos error: %@", error);
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -58,53 +74,33 @@ static NSString * const reuseIdentifier = @"Cell";
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of items
-    return 0;
+    return self.photos.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    
+    FRPCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    [cell setModel:self.photos[indexPath.item]];
     // Configure the cell
     
     return cell;
 }
 
-#pragma mark <UICollectionViewDelegate>
-
-/*
-// Uncomment this method to specify if the specified item should be highlighted during tracking
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-	return YES;
-}
-*/
-
-/*
-// Uncomment this method to specify if the specified item should be selected
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-*/
-
-/*
-// Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
-	return NO;
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    FRPFullSizePhotoViewControler *controller = [[FRPFullSizePhotoViewControler alloc] initWithModels:self.photos currentIndex:indexPath.item];
+    controller.delegate = self;
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
-- (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	return NO;
-}
+#pragma mark <FRPFullSizePhotoViewControllerDelegate>
 
-- (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
+
+- (void)userDidScroll:(FRPFullSizePhotoViewControler *)controller toIndex:(NSInteger)index {
+    [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredVertically animated:YES];
 }
-*/
 
 @end
